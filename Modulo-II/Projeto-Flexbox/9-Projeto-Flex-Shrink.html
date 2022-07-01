@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex Shrink</title>
+
+    <style>
+
+        .flex-container{
+            display: flex;
+            border: 1px solid white;
+            max-width: 350px;
+        }
+
+        .item{
+            margin: 5px;
+            background-color: red;
+            font-size: 24px;
+            text-align: center; 
+        }
+
+        .shrink-1{
+            flex-shrink: 1;
+        }
+
+        .shrink-0{
+            flex-shrink: 0;
+        }
+
+        .fg-1{
+            flex-grow: 1;
+        }
+
+        .basis{
+            flex-basis: 100px;
+        }
+
+        .shrink-0-basis-100{
+            flex-shrink: 0;
+            flex-basis: 100px
+        }
+
+        .shrink-2{
+            flex-shrink: 2;
+        }
+
+        .shrink-3{
+            flex-shrink: 3;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <p>Flex-Shrink: 1 (Conteúdos de mesmo tamanho)</p>
+    <div class="flex-container">
+        <div class="item shrink-1 fg-1">A</div>
+        <div class="item shrink-1 fg-1">B</div>
+        <div class="item shrink-1 fg-1">C</div>
+        <div class="item shrink-1 fg-1">D</div>
+        <div class="item shrink-1 fg-1">E</div>
+    </div>
+
+    <p>Flex-Shrink: 1 (Conteúdos de tamanhos diferentes)</p>
+    <div class="flex-container">
+        <div class="item shrink-1 fg-1">A</div>
+        <div class="item shrink-1 fg-1">B</div>
+        <div class="item shrink-1 fg-1">Lorem ipsum dolor amet</div>
+        <div class="item shrink-1 fg-1">D</div>
+        <div class="item shrink-1 fg-1">E</div>
+    </div>
+
+    <p>Flex-Shrink: 0 + basis: 100px (Conteúdos de tamanhos diferentes)</p>
+    <div class="flex-container">
+        <div class="item shrink-0 fg-1 basis">A</div>
+        <div class="item shrink-0 fg-1 basis">B</div>
+        <div class="item shrink-0 fg-1 basis">Lorem ipsum dolor amet</div>
+        <div class="item shrink-0 fg-1 basis">D</div>
+        <div class="item shrink-0 fg-1 basis">E</div>
+    </div>
+
+    <p>Flex-Shrink: mix (Conteúdos de tamanhos diferentes)</p>
+    <div class="flex-container">
+        <div class="item shrink-0-basis-100 fg-1">A</div>
+        <div class="item shrink-1 fg-1">B</div>
+        <div class="item shrink-2 fg-1">Lorem ipsum</div>
+        <div class="item shrink-2 fg-1">D</div>
+        <div class="item shrink-3 fg-1">E</div>
+    </div>
+
+</body>
+</html>
